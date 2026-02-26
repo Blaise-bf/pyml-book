@@ -1,3 +1,4 @@
+from cProfile import label
 import numpy as np
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
@@ -14,7 +15,7 @@ print('From URL:', s)
 df = pd.read_csv(s, header=None, encoding='utf-8')
 
 
-def plot_decsion_regions(X, y, classifier, resolution=0.02):
+def plot_decsion_regions(X, y, classifier, test_idx=None, resolution=0.02):
 
     # setup marker generator and color map
     markers = ('o', 's', '^', 'v', '<')
@@ -45,4 +46,13 @@ def plot_decsion_regions(X, y, classifier, resolution=0.02):
             edgecolors='black'
 
 
+        )
+    if test_idx:
+        X_test, y_test = X[test_idx, :], y[test_idx]
+
+        plt.scatter(
+            X_test[:, 0], X_test[:, 1],
+            c='none', edgecolors='black',
+            alpha=1.0, linewidth=1, marker='o',
+            s=100, label='Test set'
         )

@@ -1,4 +1,5 @@
 from cProfile import label
+from math import log2
 import numpy as np
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
@@ -15,7 +16,8 @@ print('From URL:', s)
 df = pd.read_csv(s, header=None, encoding='utf-8')
 
 
-def plot_decsion_regions(X, y, classifier, test_idx=None, resolution=0.02):
+def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
+
 
     # setup marker generator and color map
     markers = ('o', 's', '^', 'v', '<')
@@ -56,3 +58,17 @@ def plot_decsion_regions(X, y, classifier, test_idx=None, resolution=0.02):
             alpha=1.0, linewidth=1, marker='o',
             s=100, label='Test set'
         )
+
+def sigmoid(z):
+    return 1.0 / (1.0 + np.exp(-z))
+
+def entropy (p):
+    return -p * np.log2(p) - (1-p) * np.log2((1 - p))
+
+def error(p):
+    return 1 - np.max([p, 1 - p])
+
+def gini(p):
+    return p*(1 - p) + (1 - p) * (1 - (1-p))
+
+

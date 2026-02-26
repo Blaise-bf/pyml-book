@@ -43,7 +43,7 @@ class LogisticRgressionGD:
         '''
 
         rgen = np.random.RandomState(self.random_state)
-        self.w_ = rgen.normal(loc=o.o, scale=0.01, size=X.shape[1])
+        self.w_ = rgen.normal(loc=0.0, scale=0.01, size=X.shape[1])
         self.b_ = np.float64(0.)
         self.losses_ = []
 

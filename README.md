@@ -1,28 +1,46 @@
 # Python Machine Learning Book Implementations
 
-This repository contains "from-scratch" implementations of fundamental machine learning algorithms. The goal of this project is to understand the inner workings of these algorithms by implementing them using Python and NumPy, following the architectural patterns of popular libraries like scikit-learn.
+This repository contains hands-on implementations and notebook explorations of core machine learning concepts. The project follows a learn-by-building approach, combining from-scratch models with scikit-learn workflows for feature engineering, model training, and interpretability.
 
-## 🚀 Algorithms Implemented
+## 🚀 Covered Topics
 
-### Chapter 1: Simple Machine Learning Algorithms
-- **Perceptron**: A basic linear neuron model.
+### Chapter 1: Training Simple ML Algorithms
+- **Perceptron**: A basic linear classifier.
 - **Adaline (Adaptive Linear Neuron)**:
-  - **AdalineGD**: Implementation using Batch Gradient Descent.
-  - **AdalineSGD**: Implementation using Stochastic Gradient Descent.
+  - **AdalineGD** (batch gradient descent)
+  - **AdalineSGD** (stochastic gradient descent)
 
-### Chapter 2: Machine Learning Classifiers
-- **Logistic Regression**: A probabilistic classifier using the sigmoid activation function and log loss optimization. Includes a detailed [mathematical derivation](./ch2-tour-of-ml-classifiers/LOGISTIC_REGRESSION_DERIVATION.md) of the loss function gradients.
+### Chapter 2: Tour of ML Classifiers
+- **Logistic Regression** experiments and classifier workflows.
+- Detailed [logistic regression derivation](./ch2-tour-of-ml-classifiers/LOGISTIC_REGRESSION_DERIVATION.md).
+
+### Chapter 3: Preparing Data
+- Encoding categorical targets and features.
+- Normalization, standardization, and robust scaling.
+- **Regularization analysis** (L1/L2) for logistic regression.
+- **Sequential Backward Selection (SBS)** feature selection.
+- **Random Forest feature importance** and threshold-based selection.
+- **Model interpretability with SHAP and LIME**:
+  - Global SHAP feature importance
+  - Local SHAP contributions for a sample
+  - Local LIME explanation for the same sample
+  - SHAP vs LIME side-by-side comparison
 
 ## 🛠️ Project Structure
-- `ch1-training-simple-ml-algorithms/`: Implementations of Perceptron and Adaline.
-- `ch2-tour-of-ml-classifiers/`: Implementations of Logistic Regression and other classifiers.
-- `helpers/`: Shared utility functions, including decision region visualization.
-- `demo.ipynb`: Interactive Jupyter notebooks for visualizing algorithm performance.
+- `ch1-training-simple-ml-algorithms/`: Perceptron and Adaline implementations + notebook demos.
+- `ch2-tour-of-ml-classifiers/`: Logistic regression notes and classifier notebooks.
+- `ch3-preparing-data/`: Data preprocessing, feature selection (`sbs.py`), and interpretability notebooks.
+- `helpers/`: Shared utility helpers.
+
+## 📓 Notebooks
+- `ch1-training-simple-ml-algorithms/demo.ipynb`
+- `ch2-tour-of-ml-classifiers/demo.ipynb`
+- `ch3-preparing-data/data-prep.ipynb`
 
 ## 📚 Credits & References
 
-The implementations and pedagogical structure of this codebase are based on the materials and ideas from:
+The implementations and pedagogical structure are inspired by:
 
-**"Machine Learning with PyTorch and Scikit-Learn"** by **Sebastian Raschka**, Vahid Mirjalili, and Yuxi (Hayden) Liu.
+**"Machine Learning with PyTorch and Scikit-Learn"** by **Sebastian Raschka**, **Vahid Mirjalili**, and **Yuxi (Hayden) Liu**.
 
-This project serves as a personal study guide and reference for the concepts covered in the book.
+This repository is maintained as a personal study and experimentation workspace.

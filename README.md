@@ -26,16 +26,28 @@ This repository contains hands-on implementations and notebook explorations of c
   - Local LIME explanation for the same sample
   - SHAP vs LIME side-by-side comparison
 
+### Chapter 4: Data Compression
+- **Principal Component Analysis (PCA)**:
+  - Covariance matrix, eigen decomposition, explained variance analysis.
+  - Projection onto lower-dimensional principal subspaces.
+- **Linear Discriminant Analysis (LDA)**:
+  - Step-by-step formulation with class means, within-class scatter $S_W$, and between-class scatter $S_B$.
+  - Generalized eigenvalue solution of $S_W^{-1}S_B$ and supervised projection to linear discriminants.
+- **Nonlinear dimensionality reduction**:
+  - **t-SNE** visualization workflow on the digits dataset.
+
 ## 🛠️ Project Structure
 - `ch1-training-simple-ml-algorithms/`: Perceptron and Adaline implementations + notebook demos.
 - `ch2-tour-of-ml-classifiers/`: Logistic regression notes and classifier notebooks.
 - `ch3-preparing-data/`: Data preprocessing, feature selection (`sbs.py`), and interpretability notebooks.
+- `ch4-data-compression/`: PCA, LDA, and t-SNE notebook experiments.
 - `helpers/`: Shared utility helpers.
 
 ## 📓 Notebooks
 - `ch1-training-simple-ml-algorithms/demo.ipynb`
 - `ch2-tour-of-ml-classifiers/demo.ipynb`
 - `ch3-preparing-data/data-prep.ipynb`
+- `ch4-data-compression/data-compression.ipynb`
 
 ## 📚 Credits & References
 

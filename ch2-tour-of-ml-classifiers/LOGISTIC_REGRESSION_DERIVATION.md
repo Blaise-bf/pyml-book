@@ -36,10 +36,14 @@ $$ L(w) = \prod_{i=1}^{n} (\sigma(z^{(i)}))^{y^{(i)}} (1 - \sigma(z^{(i)}))^{1-y
 ## 3. The Log-Likelihood and Loss Function
 
 To simplify calculations (converting products to sums) and avoid numerical underflow, we take the natural logarithm to get the **Log-Likelihood** $l(w)$:
-$$ l(w) = \log L(w) = \sum_{i=1}^{n} \left[ y^{(i)} \log(\sigma(z^{(i)})) + (1 - y^{(i)}) \log(1 - \sigma(z^{(i)})) \right] $$
+$$
+ l(w) = \log L(w) = \sum_{i=1}^{n} \left[ y^{(i)} \log(\sigma(z^{(i)})) + (1 - y^{(i)}) \log(1 - \sigma(z^{(i)})) \right] 
+ $$
 
 In machine learning, we typically minimize a **Loss Function**. We define the Log Loss $J(w)$ as the Negative Log-Likelihood:
-$$ J(w) = -l(w) = -\sum_{i=1}^{n} \left[ y^{(i)} \log(\sigma(z^{(i)})) + (1 - y^{(i)}) \log(1 - \sigma(z^{(i)})) \right] $$
+$$
+ J(w) = -l(w) = -\sum_{i=1}^{n} \left[ y^{(i)} \log(\sigma(z^{(i)})) + (1 - y^{(i)}) \log(1 - \sigma(z^{(i)})) \right] 
+ $$
 
 ---
 
@@ -47,11 +51,15 @@ $$ J(w) = -l(w) = -\sum_{i=1}^{n} \left[ y^{(i)} \log(\sigma(z^{(i)})) + (1 - y^
 
 To update the weights using Gradient Descent, we need the partial derivative of $J(w)$ with respect to each weight $w_j$. Using the **Chain Rule**:
 
-$$ \frac{\partial J}{\partial w_j} = \frac{\partial J}{\partial \sigma} \cdot \frac{\partial \sigma}{\partial z} \cdot \frac{\partial z}{\partial w_j} $$
+$$
+ \frac{\partial J}{\partial w_j} = \frac{\partial J}{\partial \sigma} \cdot \frac{\partial \sigma}{\partial z} \cdot \frac{\partial z}{\partial w_j} 
+ $$
 
 ### Part A: $\frac{\partial J}{\partial \sigma}$
 Considering a single sample:
-$$ \frac{\partial}{\partial \sigma} [-(y \log \sigma + (1-y) \log(1-\sigma))] = -\left( \frac{y}{\sigma} - \frac{1-y}{1-\sigma} \right) = \frac{\sigma - y}{\sigma(1-\sigma)} $$
+$$
+ \frac{\partial}{\partial \sigma} [-(y \log \sigma + (1-y) \log(1-\sigma))] = -\left( \frac{y}{\sigma} - \frac{1-y}{1-\sigma} \right) = \frac{\sigma - y}{\sigma(1-\sigma)} 
+ $$
 
 ### Part B: $\frac{\partial \sigma}{\partial z}$
 As noted earlier:
@@ -64,18 +72,30 @@ Since $z = \sum w_j x_j + b$:
 
 ### Combining Parts (Single Sample):
 For the weight $w_j$:
-$$ \frac{\partial J^{(i)}}{\partial w_j} = \left( \frac{\sigma(z^{(i)}) - y^{(i)}}{\sigma(z^{(i)})(1-\sigma(z^{(i)}))} \right) \cdot \left( \sigma(z^{(i)})(1-\sigma(z^{(i)})) \right) \cdot x_j^{(i)} = (\sigma(z^{(i)}) - y^{(i)}) x_j^{(i)} $$
+$$
+ \frac{\partial J^{(i)}}{\partial w_j} = \left( \frac{\sigma(z^{(i)}) - y^{(i)}}{\sigma(z^{(i)})(1-\sigma(z^{(i)}))} \right) \cdot \left( \sigma(z^{(i)})(1-\sigma(z^{(i)})) \right) \cdot x_j^{(i)} = (\sigma(z^{(i)}) - y^{(i)}) x_j^{(i)} 
+ $$
 
 For the bias $b$:
-$$ \frac{\partial J^{(i)}}{\partial b} = \left( \frac{\sigma(z^{(i)}) - y^{(i)}}{\sigma(z^{(i)})(1-\sigma(z^{(i)}))} \right) \cdot \left( \sigma(z^{(i)})(1-\sigma(z^{(i)})) \right) \cdot 1 = \sigma(z^{(i)}) - y^{(i)} $$
+$$
+ \frac{\partial J^{(i)}}{\partial b} = \left( \frac{\sigma(z^{(i)}) - y^{(i)}}{\sigma(z^{(i)})(1-\sigma(z^{(i)}))} \right) \cdot \left( \sigma(z^{(i)})(1-\sigma(z^{(i)})) \right) \cdot 1 = \sigma(z^{(i)}) - y^{(i)} 
+$$
 
 ### Total Gradients for $n$ samples:
-$$ \frac{\partial J}{\partial w_j} = \sum_{i=1}^n (\sigma(z^{(i)}) - y^{(i)}) x_j^{(i)} $$
-$$ \frac{\partial J}{\partial b} = \sum_{i=1}^n (\sigma(z^{(i)}) - y^{(i)}) $$
+$$ 
+\frac{\partial J}{\partial w_j} = \sum_{i=1}^n (\sigma(z^{(i)}) - y^{(i)}) x_j^{(i)} $$
+
+$$
+ \frac{\partial J}{\partial b} = \sum_{i=1}^n (\sigma(z^{(i)}) - y^{(i)}) 
+ $$
 
 In vector notation (as seen in `logisticreg.py`):
-$$ \nabla_w J = \mathbf{X}^T (\mathbf{\sigma} - \mathbf{y}) $$
-$$ \nabla_b J = \text{sum}(\mathbf{\sigma} - \mathbf{y}) $$
+$$
+ \nabla_w J = \mathbf{X}^T (\mathbf{\sigma} - \mathbf{y})
+$$
+$$
+ \nabla_b J = \text{sum}(\mathbf{\sigma} - \mathbf{y})
+$$
 
 ---
 

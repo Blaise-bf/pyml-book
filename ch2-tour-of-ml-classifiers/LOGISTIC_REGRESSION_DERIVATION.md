@@ -8,13 +8,16 @@ The Logistic Regression model uses the **Sigmoid (Logistic) activation function*
 
 ### Net Input
 The net input $z$ for a single sample $x$ is:
+
 $$ z = \mathbf{w}^T \mathbf{x} + b = \sum_{j=1}^m w_j x_j + b $$
 
 ### Activation Function (Sigmoid)
 The activation $\sigma(z)$ is defined as:
+
 $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$
 
 A useful property of the sigmoid derivative that we will use later is:
+
 $$ \frac{d\sigma}{dz} = \sigma(z)(1 - \sigma(z)) $$
 
 ---
@@ -22,13 +25,16 @@ $$ \frac{d\sigma}{dz} = \sigma(z)(1 - \sigma(z)) $$
 ## 2. The Likelihood Function
 
 For a binary classification problem ($y \in \{0, 1\}$), we assume the outcomes follow a Bernoulli distribution:
+
 - $P(y=1|x; w) = \sigma(z)$
 - $P(y=0|x; w) = 1 - \sigma(z)$
 
 For a single observation, the probability can be written as:
+
 $$ P(y|x; w) = (\sigma(z))^y (1 - \sigma(z))^{1-y} $$
 
 For a dataset of $n$ independent observations, the **Likelihood Function** $L(w)$ is the product of individual probabilities:
+
 $$ L(w) = \prod_{i=1}^{n} (\sigma(z^{(i)}))^{y^{(i)}} (1 - \sigma(z^{(i)}))^{1-y^{(i)}} $$
 
 ---

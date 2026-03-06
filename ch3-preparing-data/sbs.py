@@ -46,7 +46,7 @@ class SBS:
         self.test_size = test_size
         self.random_state = random_state
 
-    def fit(self, X, y):
+    def fit(self, X: np.ndarray, y: np.ndarray):
         """Run sequential backward selection on the provided dataset.
 
         Parameters

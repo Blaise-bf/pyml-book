@@ -1,9 +1,6 @@
-from cProfile import label
-from math import log2
 import numpy as np
 from matplotlib.colors import ListedColormap
 import matplotlib.pyplot as plt
-import os
 import pandas as pd
 
 
@@ -50,7 +47,7 @@ def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
 
         )
     if test_idx:
-        X_test, y_test = X[test_idx, :], y[test_idx]
+        X_test, = X[test_idx, :] 
 
         plt.scatter(
             X_test[:, 0], X_test[:, 1],

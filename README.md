@@ -36,11 +36,23 @@ This repository contains hands-on implementations and notebook explorations of c
 - **Nonlinear dimensionality reduction**:
   - **t-SNE** visualization workflow on the digits dataset.
 
+### Chapter 5: Best Practices
+- Cross-validation workflows and model-selection patterns.
+- Hyperparameter tuning strategies:
+  - **GridSearchCV**
+  - **RandomizedSearchCV**
+  - **HalvingRandomSearchCV**
+  - **Hyperopt (TPE-based Bayesian optimization)**
+- Classification evaluation and diagnostics:
+  - Confusion matrix analysis
+  - Metric formulations: prediction error, accuracy, TPR, precision, recall, F1-score, and MCC
+
 ## 🛠️ Project Structure
 - `ch1-training-simple-ml-algorithms/`: Perceptron and Adaline implementations + notebook demos.
 - `ch2-tour-of-ml-classifiers/`: Logistic regression notes and classifier notebooks.
 - `ch3-preparing-data/`: Data preprocessing, feature selection (`sbs.py`), and interpretability notebooks.
 - `ch4-data-compression/`: PCA, LDA, and t-SNE notebook experiments.
+- `ch5-best-practices/`: Model selection, hyperparameter tuning, and evaluation metrics notebook.
 - `helpers/`: Shared utility helpers.
 
 ## 📓 Notebooks
@@ -48,6 +60,7 @@ This repository contains hands-on implementations and notebook explorations of c
 - `ch2-tour-of-ml-classifiers/demo.ipynb`
 - `ch3-preparing-data/data-prep.ipynb`
 - `ch4-data-compression/data-compression.ipynb`
+- `ch5-best-practices/demo.ipynb`
 
 ## 📚 Credits & References
 

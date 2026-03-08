@@ -47,12 +47,23 @@ This repository contains hands-on implementations and notebook explorations of c
   - Confusion matrix analysis
   - Metric formulations: prediction error, accuracy, TPR, precision, recall, F1-score, and MCC
 
+### Chapter 6: Ensemble Methods
+- **Ensemble error analysis** and comparison with base learner error.
+- **Majority voting ensembles** with a custom `MajorityVoteClassifier`.
+- Performance comparison of base models vs majority voting via **ROC AUC** cross-validation.
+- **ROC curve** visualization for individual classifiers and the ensemble.
+- **Bagging** with decision trees:
+  - Train/test performance comparison (single tree vs bagging)
+  - Decision-boundary visualization (Decision Tree, Bagging, and Majority Vote side-by-side)
+- **AdaBoost algorithm formulation** and weighted weak-learner update steps.
+
 ## 🛠️ Project Structure
 - `ch1-training-simple-ml-algorithms/`: Perceptron and Adaline implementations + notebook demos.
 - `ch2-tour-of-ml-classifiers/`: Logistic regression notes and classifier notebooks.
 - `ch3-preparing-data/`: Data preprocessing, feature selection (`sbs.py`), and interpretability notebooks.
 - `ch4-data-compression/`: PCA, LDA, and t-SNE notebook experiments.
 - `ch5-best-practices/`: Model selection, hyperparameter tuning, and evaluation metrics notebook.
+- `ch6-esnsemble-methods/`: Voting, bagging, ROC analysis, and boosting notes.
 - `helpers/`: Shared utility helpers.
 
 ## 📓 Notebooks
@@ -61,6 +72,7 @@ This repository contains hands-on implementations and notebook explorations of c
 - `ch3-preparing-data/data-prep.ipynb`
 - `ch4-data-compression/data-compression.ipynb`
 - `ch5-best-practices/demo.ipynb`
+- `ch6-esnsemble-methods/ensemble-methods.ipynb`
 
 ## 📚 Credits & References
 

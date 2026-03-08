@@ -16,4 +16,5 @@ dependencies = [
     "scipy>=1.17.1",
     "setuptools>=80.0.0,<81.0.0",
     "skimpy>=0.0.20",
+    "xgboost>=3.2.0",
 ]

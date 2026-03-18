@@ -12,3 +12,8 @@ wheels/
 .python-version
 uv.lock
 .DS_Store
+**/*.gz
+**/*.txt
+**/*.feat
+**/*.csv
+ch7-sentiment-analysis/aclImdb/imdb.vocab

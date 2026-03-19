@@ -20,3 +20,6 @@ uv.lock
 ch7-sentiment-analysis/aclImdb/imdb.vocab
 **/*.pt
 ch11-pytorch/MNIST
+ch12-pytorch-deeper/lightning_logs
+ch12-pytorch-deeper/MNIST
+

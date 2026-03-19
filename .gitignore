@@ -16,4 +16,7 @@ uv.lock
 **/*.txt
 **/*.feat
 **/*.csv
+**/*.jpg
 ch7-sentiment-analysis/aclImdb/imdb.vocab
+**/*.pt
+ch11-pytorch/MNIST

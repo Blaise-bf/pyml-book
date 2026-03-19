@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "gdown>=5.2.1",
     "hyperopt>=0.2.7",
     "ipywidgets>=8.1.8",
     "jupyter>=1.1.1",
@@ -19,5 +20,7 @@ dependencies = [
     "scipy>=1.17.1",
     "setuptools>=80.0.0,<81.0.0",
     "skimpy>=0.0.20",
+    "torch>=2.10.0",
+    "torchvision>=0.25.0",
     "xgboost>=3.2.0",
 ]
